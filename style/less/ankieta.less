@@ -50,6 +50,7 @@
     nav {
         position: relative;
         z-index: 2;
+        visibility: hidden;
         display: flex;
         justify-content: space-between;
 
@@ -58,15 +59,34 @@
             cursor: pointer;
         }
     }
+    .result {
+        position: relative;
+        z-index: 9;
+    }
 
     .pagination {
         position: absolute;
         bottom: 4rem;
         z-index: 2;
+        visibility: hidden;
         display: flex;
         align-items: center;
         width: 100%;
         height: 2rem;
+    }
+
+    &.slide01,
+    &.slide02,
+    &.slide03,
+    &.slide04,
+    &.slide05,
+    &.slide06,
+    &.slide07 {
+
+        nav,
+        .pagination {
+            visibility: visible;
+        }
     }
 
     section {
@@ -142,6 +162,10 @@
     }
 
     &.slide01 {
+        nav .prev {
+            visibility: hidden;
+        }
+
         &::before {
             background-image: url('/img/slide01.webp');
         }
@@ -150,6 +174,59 @@
     &.slide02 {
         &::before {
             background-image: url('/img/slide02.webp');
+        }
+    }
+
+    &.slide03 {
+        &::before {
+            background-image: url('/img/slide03.webp');
+        }
+    }
+
+    &.slide04 {
+        &::before {
+            background-image: url('/img/slide04.webp');
+        }
+    }
+
+    &.slide05 {
+        &::before {
+            background-image: url('/img/slide05.webp');
+        }
+    }
+
+    &.slide06 {
+        &::before {
+            background-image: url('/img/slide05_5.webp');
+        }
+
+        .question {
+            flex-direction: column;
+            p {
+                &:nth-of-type(2),
+                &:nth-of-type(3) {
+                    font-size: 1.2rem;
+                    padding: 0 10%;
+                    margin: 0;
+                    text-align: center;
+                }
+                &:nth-of-type(3) {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+
+    &.slide07 {
+        &::before {
+            background-image: url('/img/slide06.webp');
+        }
+
+        .options {
+            button:last-of-type {
+                grid-column: 1/-1;
+                margin: 0 auto;
+            }
         }
     }
 }
