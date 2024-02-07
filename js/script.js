@@ -231,7 +231,7 @@
     // Losuj kolejność pytań
     buttons.forEach(function (element) {
         let randomNumber = Math.floor(Math.random() * 100) + 1; // Random number between 1 and 100
-        // element.style.order = randomNumber;
+        element.style.order = randomNumber;
     });
 
     // Generowanie wyniku
