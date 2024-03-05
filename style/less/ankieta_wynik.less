@@ -58,13 +58,15 @@ article.typCery24_wynik {
                     li {
                         font-size: 1.8rem;
                         margin-bottom: 2rem;
+
                         span {
                             display: block;
                             width: 100%;
                             font-size: 1.4rem;
                         }
+
                         &::marker {
-                            content: "#" counter(list-item);                            
+                            content: "#" counter(list-item);
                             font-size: 2.3rem;
                             color: @pink_BG;
                         }
@@ -84,45 +86,55 @@ article.typCery24_wynik {
                     font-size: 2.4rem;
 
                 }
+
                 p {
                     text-align: center;
                     font-size: 1.6rem;
                 }
+
                 a {
                     align-items: center;
                 }
             }
         }
+
         &.karuzel {
             display: flex;
             flex-direction: column;
             align-items: center;
+
             h3 {
                 text-align: center;
                 margin: 4rem 0
             }
         }
+
         &.contact {
             display: flex;
             flex-direction: row;
             align-items: center;
             margin-top: 4rem;
             background-color: @pink_BG;
+
             a {
                 padding: 4rem;
                 text-decoration: none;
+
                 p {
                     display: block;
                     width: 100%;
                     font-size: 1.8rem;
                     text-align: center;
+
                     u {
                         text-decoration: none;
                     }
+
                     &:last-of-type {
                         font-size: 1.4rem;
                     }
                 }
+
                 &:hover {
                     u {
                         text-decoration: underline;
@@ -130,6 +142,313 @@ article.typCery24_wynik {
                 }
             }
 
+        }
+    }
+}
+
+@media screen and (min-width: 979px) and (max-width: 1366px) {
+    article.typCery24_wynik {
+        section {
+            &.advice {
+
+                .porada,
+                .rutyna {
+                    padding: 3vw;
+                }
+
+                .porada {
+                    width: 55%;
+
+                    h3 {
+                        margin: 0 0 2vw 0;
+                        font-size: 1.6vw;
+                    }
+
+                    p {
+                        font-size: 1.2vw;
+                        margin: 0 0 2vw;
+                    }
+
+                    h4 {
+                        font-weight: 500;
+                        font-size: 1.2vw;
+                        margin: 4vw 0 0 0;
+                    }
+
+                    ul {
+                        font-size: 1.2vw;
+                    }
+                }
+
+                .rutyna {
+
+                    h3,
+                    ol {
+                        padding: 0 4rem 4rem 4rem;
+
+                        li {
+                            font-size: 1.4vw;
+                            margin-bottom: 1.6vw;
+
+                            span {
+                                font-size: 1vw;
+                            }
+
+                            &::marker {
+                                font-size: 1.8vw;
+                            }
+
+                            &::before {
+                                content: '';
+                                display: inline-block;
+                                width: 100%;
+                            }
+                        }
+                    }
+
+                    h3 {
+                        padding: 3vw;
+                        font-size: 1.6vw;
+
+                    }
+
+                    p {
+                        font-size: 1.2vw;
+                    }
+                }
+            }
+
+            &.karuzel {
+                h3 {
+                    margin: 3vw 0
+                }
+            }
+
+            &.contact {
+                margin-top: 3vw;
+
+                img {
+                    max-width: 50%;
+                }
+
+                a {
+                    padding: 3vw;
+
+                    p {
+                        font-size: 1.4vw;
+
+                        &:last-of-type {
+                            font-size: 1.4vw;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 757px) and (max-width: 978px) {
+    article.typCery24_wynik {
+        section {
+            &.advice {
+                flex-direction: column;
+
+                .porada,
+                .rutyna {
+                    padding: 3vw;
+                }
+
+                .porada {
+                    width: 100%;
+
+                    h3 {
+                        margin: 0 0 3vw 0;
+                        font-size: 2.4vw;
+                    }
+
+                    p {
+                        font-size: 1.6vw;
+                        margin: 0 0 2vw;
+                    }
+
+                    h4 {
+                        font-size: 2vw;
+                        margin: 4vw 0 0 0;
+                    }
+
+                    ul {
+                        columns: 3;
+                        font-size: 1.6vw;
+                    }
+                }
+
+                .rutyna {
+                    width: 100%;
+
+                    ol {
+                        columns: 2;
+                        width: 100%;
+                        padding: 0 4vw 4vw 4vw;
+
+                        li {
+                            font-size: 1.8vw;
+                            margin-bottom: 2vw;
+
+                            span {
+                                font-size: 1.2vw;
+                            }
+
+                            &::marker {
+                                font-size: 2.4vw;
+                            }
+                        }
+                    }
+
+                    h3 {
+                        padding: 4vw;
+                        font-size: 2.4vw;
+
+                    }
+
+                    p {
+                        font-size: 1.6vw;
+                    }
+                }
+            }
+
+            &.karuzel {
+                h3 {
+                    margin: 4vw 0
+                }
+            }
+
+            &.contact {
+                margin-top: 4vw;
+
+                img {
+                    max-width: 50%
+                }
+
+                a {
+                    padding: 4vw;
+
+                    p {
+                        font-size: 2vw;
+
+                        &:last-of-type {
+                            font-size: 2vw;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 0px) and (max-width: 756px) {
+    article.typCery24_wynik {
+        section {
+            &.advice {
+                flex-direction: column;
+
+                .porada,
+                .rutyna {
+                    padding: 5vw;
+                }
+
+                .porada {
+                    width: 100%;
+
+                    h3 {
+                        margin: 0 0 5vw 0;
+                        font-size: 6vw;
+                    }
+
+                    p {
+                        font-size: 3.4vw;
+                        margin: 0 0 2vw;
+                    }
+
+                    h4 {
+                        font-size: 4vw;
+                        margin: 4rem 0 0 0;
+                    }
+
+                    ul {
+                        columns: 1;
+                        font-size: 3.4vw;
+                    }
+                }
+
+                .rutyna {
+                    width: 100%;
+
+                    h3,
+                    ol {
+                        padding: 0 4vw 4vw 4vw;
+                        text-align: center;
+                        list-style-position: inside;
+
+                        li {
+                            font-size: 4.4vw;
+                            margin-bottom: 4vw;
+
+                            span {
+                                font-size: 3vw;
+                            }
+
+                            &::marker {
+                                font-size: 5.5vw;
+                            }
+                        }
+                    }
+
+                    h3 {
+                        padding: 5vw;
+                        font-size: 6vw;
+
+                    }
+
+                    p {
+                        font-size: 3.2vw;
+                    }
+
+                    a {
+                        align-items: center;
+                    }
+                }
+            }
+
+            &.karuzel {
+                h3 {
+                    margin: 5vw 0;
+                }
+            }
+
+            &.contact {
+                flex-direction: column-reverse;
+                margin-top: 5vw;
+
+                img {
+                    width: 100%;
+                }
+
+                a {
+                    padding: 5vw;
+                    text-decoration: none;
+
+                    p {
+                        font-size: 4vw;
+
+                        &:last-of-type {
+                            font-size: 4vw;
+                        }
+                    }
+                }
+
+            }
         }
     }
 }

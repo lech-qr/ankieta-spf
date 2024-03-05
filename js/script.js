@@ -28,6 +28,10 @@
         "mieszana": "/pol_m_Pielegnacja_Pielegnacja-dopasowana-do-potrzeb_Skora-mieszana-13140.html"
     }
 
+    // Produkty do karuzeli - w zależności od wybrania ilości ktoków, produkty zostaną dodane (tabela będzie rozszerzona).
+    // Do karuzeli zostanie wylosowanych 12 produktów
+    let productsSucha = []
+
     const article = document.querySelector('.typCery24')
     const section = document.querySelectorAll('article section')
     const prev = document.querySelector('nav .prev')
@@ -60,28 +64,28 @@
         // podniesienie indexu
         slide = slide + 1
         sIndex = slide.toString()
-        console.log(`Aktualny index to ${slide}`)
+        // console.log(`Aktualny index to ${slide}`)
     }
     // Wybór
     const suchaOpt = () => {
         result['sucha'] = result['sucha'] + 1
         option.push('sucha')
-        console.log(result, option)
+        // console.log(result, option)
     }
     const normalnaOpt = () => {
         result['normalna'] = result['normalna'] + 1
         option.push('normalna')
-        console.log(result, option)
+        // console.log(result, option)
     }
     const tlustaOpt = () => {
         result['tłusta'] = result['tłusta'] + 1
         option.push('tłusta')
-        console.log(result, option)
+        // console.log(result, option)
     }
     const mieszanaOpt = () => {
         result['mieszana'] = result['mieszana'] + 1
         option.push('mieszana')
-        console.log(result, option)
+        // console.log(result, option)
     }
 
     // Następny slajd
@@ -93,19 +97,19 @@
                 if ((result['sucha'] !== 0 && (result['sucha'] === result['normalna'] || result['sucha'] === result['tłusta'] || result['sucha'] === result['mieszana'])) ||
                     (result['normalna'] !== 0 && (result['normalna'] === result['tłusta'] || result['normalna'] === result['mieszana'])) ||
                     (result['tłusta'] !== 0 && (result['tłusta'] === result['mieszana']))) {
-                    console.log('Brak jednoznacznego wyniku')
+                    // console.log('Brak jednoznacznego wyniku')
                     article.classList.add("active", "slide06")
                     section[6].style.opacity = '1'
                     section[6].style.zIndex = '1'
                     slide = 6
                     sIndex = slide.toString()
-                    console.log(`Aktualny index to ${slide} i pół 😉`)
+                    // console.log(`Aktualny index to ${slide} i pół 😉`)
                     pagination.textContent = '5.5'
                 } else {
                     // Na piątym pytaniu nie ma wątpliwości co do odpowiedzi - idziemy do slide 07
                     slide = 7
                     sIndex = slide.toString()
-                    console.log(`Aktualny index to ${slide}`)
+                    // console.log(`Aktualny index to ${slide}`)
                     pagination.textContent = '6'
                     article.classList.add("active", "slide0" + sIndex)
                     showSlide()
@@ -140,7 +144,7 @@
             result['mieszana'] = result['mieszana'] - 1
             option.pop()
         }
-        console.log(result, option)
+        // console.log(result, option)
     }
     const prevSlide = () => {
         hideSlide()
@@ -149,7 +153,7 @@
             article.classList.remove("slide0" + sIndex)
             slide = slide - 1
             sIndex = slide.toString()
-            console.log(`Aktualny index to ${slide}`)
+            // console.log(`Aktualny index to ${slide}`)
             pagination.textContent = sIndex
             article.classList.add("active", "slide0" + sIndex)
             showSlide()
@@ -172,7 +176,7 @@
             greatest = result['mieszana'];
             type = 'mieszana'
         }
-        console.log(`Ostateczny wynik ${type}`);
+        // console.log(`Ostateczny wynik ${type}`);
     }
 
     // Start aplikacji
@@ -192,7 +196,7 @@
             article.classList.add("active", "slide00");
             slide = 0
             sIndex = slide.toString()
-            console.log(`Aktualny index to ${slide}`);
+            // console.log(`Aktualny index to ${slide}`);
             showSlide()
             // Wypisz index w paginacji
             pagination.textContent = sIndex
@@ -239,12 +243,12 @@
     // Losuj kolejność pytań
     buttons.forEach(function (element) {
         let randomNumber = Math.floor(Math.random() * 100) + 1; // Random number between 1 and 100
-        // element.style.order = randomNumber;
+        element.style.order = randomNumber;
     });
 
     // Generowanie wyniku
     const prntResult = () => {
-        console.log(`Typ cery to ${type}, a ilość kroków to ${howMany}`);
+        // console.log(`Typ cery to ${type}, a ilość kroków to ${howMany}`);
         if (type === 'sucha') {
             resultPe.textContent = 'Twoja skóra wymaga dogłębnego nawilżenia. W\xa0kosmetykach oprócz składników typowo nawilżających szukaj również takich, które ograniczą TEWL (transepidermalą utratę wody) i\xa0odbudują barierę hydrolipidową Twojej cery. Nie zapominaj także o ochronie przeciwsłonecznej i\xa0stosowaniu składników anti-aging, ponieważ Twoja skóra stosunkowo szybko ulega procesom starzenia.'
         } else if (type === 'normalna') {
@@ -259,6 +263,8 @@
         resultH2.textContent = 'Cera ' + type
         resultA1.href = advice[type]
         resultA2.href = list[type]
+        // Dodaj wynik do url - potrzebne do pomiaru dla SalesMANAGO
+        document.location = window.location.href + '#' + type
         nextSlide()
     }
 
